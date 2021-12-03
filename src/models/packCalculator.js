@@ -7,14 +7,13 @@ const packCalculator = (order, packSizes = defaultPackSizes) => {
   let i = packs.length - 1;
 
   while (order > 0) {
-    if (order > packs[i] - packs[0] || i === 0) {
+    if (order > packs[i] - packs[0]) {
       fulfillment[packs[i]] = fulfillment[packs[i]] + 1 || 1;
       order -= packs[i];
     } else {
       i--;
     }
   }
-  console.log(fulfillment);
   return fulfillment;
 };
 
